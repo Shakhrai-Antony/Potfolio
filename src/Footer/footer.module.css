@@ -1,0 +1,11 @@
+.footerContainer{
+    width: 100%;
+    height: 100px;
+    margin-top: 70px;
+}
+.footerContainer div{
+    font-family: Inter;
+    color: #ffffff;
+    text-align: left;
+
+}

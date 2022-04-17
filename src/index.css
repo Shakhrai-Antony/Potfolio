@@ -1,10 +1,24 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('./Fonts/Inter-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: local('Merriweather'), url('./Fonts/Merriweather-Regular.ttf') format('ttf');
+}
+
+body {
+  margin: 0 auto;
+  background-color: #000000;
+  font-family: 'Inter' , 'Merriweather', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 1440px;
 }
 
 code {
