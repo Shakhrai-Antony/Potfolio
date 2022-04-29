@@ -1,10 +1,8 @@
 import React from "react";
+import video from './../img/video.jpg'
 
 export const Video = () => {
     return (
-        <div>
-            <iframe title='video' src="https://youtu.be/O1rXr_QGv1M"
-                   width="1400" height="705"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
-        </div>
+            <video src="https://www.w3schools.com/html/movie.mp4" width="100%" height="auto" controls="controls" poster={video}/>
     )
 }

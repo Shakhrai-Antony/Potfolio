@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './Main.module.css'
 import camera from './../img/camera 1.png'
 import video from './../img/video 1.png'
@@ -13,8 +13,20 @@ import portfolioImg5 from './../img/portfolio-img (5).png'
 import {Video} from "./Video";
 
 export const Main = () => {
-    const porfolioImg = [portfolioImg,portfolioImg1,portfolioImg2,portfolioImg3,portfolioImg4,portfolioImg5]
-    const portfolioPictures = porfolioImg.map((item) => <img src={item} alt=""/>)
+    const portfolioImges = [portfolioImg, portfolioImg1, portfolioImg2, portfolioImg3, portfolioImg4, portfolioImg5]
+    const winterPortfolio = [portfolioImg]
+    const springPortfolio = [portfolioImg2]
+    const summerPortfolio = [portfolioImg3]
+    const autumnPortfolio = [portfolioImg4]
+    const [currentSeason, changeCurrentSeason] = useState('all');
+    const [isActive, setIsActive] = useState(false)
+    const activeButton = () => {
+        setIsActive(true);
+        changeCurrentSeason('winter')
+    }
+    const deactivateButton = () => {
+        setIsActive(false)
+    }
     return (
         <main>
             <section className={s.containerHero}>
@@ -34,7 +46,7 @@ export const Main = () => {
                 </div>
             </section>
             <section className={s.containerSkills}>
-                <div className={s.skills}>
+                <div id='skills' className={s.skills}>
                     <h3>Skills</h3>
                 </div>
                 <div className={s.skillsIcons}>
@@ -61,21 +73,31 @@ export const Main = () => {
                 </div>
             </section>
             <section className={s.containerPortfolio}>
-                <div className={s.portfolio}>
+                <div id='portfolio' className={s.portfolio}>
                     <h3>Portfolio</h3>
                 </div>
                 <div className={s.portfolioBtns}>
-                    <button>Winter</button>
-                    <button>Spring</button>
-                    <button>Summer</button>
-                    <button>Autumn</button>
+                    <button className={isActive ? s.activeButton : null}
+                            onClick={activeButton}>Winter</button>
+                    <button onClick={() => changeCurrentSeason("spring")}>Spring</button>
+                    <button onClick={() => changeCurrentSeason("summer")}>Summer</button>
+                    <button onClick={() => changeCurrentSeason("autumn")}>Autumn</button>
                 </div>
                 <div className={s.portfolioPictures}>
-                    {portfolioPictures}
+                    {(currentSeason === "winter") ?
+                        winterPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
+                        (currentSeason === "spring") ?
+                            springPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
+                            (currentSeason === "summer") ?
+                                summerPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
+                                (currentSeason === "autumn") ?
+                                    autumnPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
+                                    portfolioImges.map((item, index) => <img src={item} key={index} alt=""/>)
+                    }
                 </div>
             </section>
             <section className={s.containerVideo}>
-                <div className={s.video}>
+                <div id='video' className={s.video}>
                     <h3>Video</h3>
                 </div>
                 <div className={s.videoContent}>
@@ -83,7 +105,7 @@ export const Main = () => {
                 </div>
             </section>
             <section className={s.containerPrice}>
-                <div className={s.price}>
+                <div id='price' className={s.price}>
                     <h3>Price</h3>
                 </div>
                 <div className={s.priceCategories}>
@@ -120,7 +142,7 @@ export const Main = () => {
                 </div>
             </section>
             <section className={s.containerContacts}>
-                <div className={s.contactsBack}>
+                <div id='contacts' className={s.contactsBack}>
                     <div>
                         <h3>Contact me</h3>
                         <form>

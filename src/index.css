@@ -7,6 +7,7 @@
   font-family: 'Inter';
   src: local('Inter'), url('./Fonts/Inter-Regular.ttf') format('ttf');
 }
+
 @font-face {
   font-family: 'Merriweather';
   src: local('Merriweather'), url('./Fonts/Merriweather-Regular.ttf') format('ttf');
@@ -15,10 +16,11 @@
 body {
   margin: 0 auto;
   background-color: #000000;
-  font-family: 'Inter' , 'Merriweather', sans-serif;
+  font-family: 'Inter', 'Merriweather', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 1440px;
+  max-width: 1440px;
+  position: relative;
 }
 
 code {
