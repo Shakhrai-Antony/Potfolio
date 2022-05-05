@@ -167,8 +167,6 @@
 }
 .portfolioBtns button:last-child{
     margin-right: 0;
-    background-color: #bdae82;
-    color: #000000;
 }
 .portfolioBtns button.activeButton {
     background-color: #bdae82;
@@ -645,6 +643,9 @@
     .price h3:before {
         width: 100px;
     }
+    .priceCategories {
+        display: block;
+    }
     .priceCategories div {
         margin-bottom: 10px;
         width: 300px;
@@ -659,6 +660,8 @@
         justify-content: space-between;
         margin: auto;
     }
-    .priceCategories {
+    .contactsBack div {
+        margin: 0 auto;
     }
 }
+

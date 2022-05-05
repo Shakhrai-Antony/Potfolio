@@ -15,21 +15,21 @@ import {Video} from "./Video";
 export const Main = () => {
     const portfolioImges = [portfolioImg, portfolioImg1, portfolioImg2, portfolioImg3, portfolioImg4, portfolioImg5]
     const winterPortfolio = [portfolioImg]
-    const springPortfolio = [portfolioImg2]
+    const springPortfolio = [portfolioImg2, portfolioImg1]
     const summerPortfolio = [portfolioImg3]
-    const autumnPortfolio = [portfolioImg4]
+    const autumnPortfolio = [portfolioImg4, portfolioImg5]
     const [currentSeason, changeCurrentSeason] = useState('all');
-    const [isActive, setIsActive] = useState(false)
-    const activeButton = () => {
-        setIsActive(true);
-        changeCurrentSeason('winter')
-    }
-    const deactivateButton = () => {
-        setIsActive(false)
+    const seasons = ["Winter", "Spring", "Summer", "Autumn"];
+    const changeSeason = (item) => {
+        if (item === currentSeason) {
+            changeCurrentSeason ("all")
+        } else {
+            changeCurrentSeason(item);
+        }
     }
     return (
         <main>
-            <section className={s.containerHero}>
+            <section className={  s.containerHero}>
                 <div className={s.alexaRise}>
                     <div>
                         <h3>
@@ -77,20 +77,18 @@ export const Main = () => {
                     <h3>Portfolio</h3>
                 </div>
                 <div className={s.portfolioBtns}>
-                    <button className={isActive ? s.activeButton : null}
-                            onClick={activeButton}>Winter</button>
-                    <button onClick={() => changeCurrentSeason("spring")}>Spring</button>
-                    <button onClick={() => changeCurrentSeason("summer")}>Summer</button>
-                    <button onClick={() => changeCurrentSeason("autumn")}>Autumn</button>
+                    {seasons.map((item, index) =>
+                        <button key={index} className={(item === currentSeason) && s.activeButton}
+                                onClick={() => changeSeason(item)}>{item}</button>)}
                 </div>
                 <div className={s.portfolioPictures}>
-                    {(currentSeason === "winter") ?
+                    {(currentSeason === "Winter") ?
                         winterPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
-                        (currentSeason === "spring") ?
+                        (currentSeason === "Spring") ?
                             springPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
-                            (currentSeason === "summer") ?
+                            (currentSeason === "Summer") ?
                                 summerPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
-                                (currentSeason === "autumn") ?
+                                (currentSeason === "Autumn") ?
                                     autumnPortfolio.map((item, index) => <img src={item} key={index} alt=""/>) :
                                     portfolioImges.map((item, index) => <img src={item} key={index} alt=""/>)
                     }

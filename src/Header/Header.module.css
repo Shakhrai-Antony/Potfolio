@@ -4,24 +4,22 @@ header{
     color: #ffffff;
     position: absolute;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
     z-index: 2;
+    align-items: center;
 }
 header img {
     width: 50px;
     height: 50px;
     margin-left: 20px;
 }
-
 .headerLinks  {
-    margin-top: 20px;
     margin-left: auto;
 }
-.headerLinks ul {
+.ulLinks {
     display: flex;
     list-style: none;
     margin-right: 31px;
+    align-items: center;
 }
 .headerLinks li {
     margin-left: 30px;
@@ -34,11 +32,9 @@ header img {
 .link:hover {
     color: #bdae82;
 }
-
 .headerLanguage {
-    margin: 20px 40px 0 0;
+    margin-right: 40px;
 }
-
 .linkRu {
     color: #ffffff;
     text-decoration: none;
@@ -48,7 +44,6 @@ header img {
 .linkRu:hover {
     color: #bdae82;
 }
-
 .linkEn {
     color: #ffffff;
     text-decoration: none;
@@ -57,4 +52,104 @@ header img {
 }
 .linkEn:hover {
     color: #bdae82;
+}
+.menu__toggle {
+    display: none;
+}
+.menu__button {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+}
+.menu__button span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    display: flex;
+}
+.menu__button span:before {
+    content: '';
+    width: 100%;
+    top: 12px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    transition-duration: 0.25s;
+}
+.menu__button span:after {
+    content: '';
+    width: 100%;
+    top: -12px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    transition-duration: 0.25s;
+}
+.menu__toggle:checked ~ .menu__button span:after {
+    transform: rotate(90deg);
+    top: 0;
+}
+.menu__toggle:checked ~ .menu__button span:before {
+    transform: rotate(0);
+    top: 0;
+}
+.menu__toggle:checked ~ .menu__button span {
+    transform: rotate(45deg);
+}
+@media (max-width: 768px) {
+    .menu__button {
+        display: flex;
+        z-index: 7;
+        margin-right: 20px;
+
+    }
+    .ulLinks {
+        display: block;
+        position: absolute;
+        width: 0;
+        right: 0;
+        max-width: 0;
+        margin-right: 0;
+        top: 0;
+        background-color: #000000;
+        height: 100vh;
+        z-index: 3;
+        visibility: hidden;
+        overflow: hidden;
+        transition-duration: 0.5s;
+    }
+    .headerLinks li {
+        line-height: 90px;
+        font-size: 40px;
+        margin: 0 0 0 20%;
+    }
+    .headerLinks li a {
+        display: block;
+        text-align: left;
+    }
+    .headerLinks li:first-child {
+        margin-top: 90px;
+    }
+    .menu__toggle:checked ~ .ulLinks {
+        width: 70%;
+        max-width: 80%;
+        visibility: visible;
+    }
+    .headerLanguage {
+        position: absolute;
+        right: 70px;
+    }
+    .hideContent {
+        background-color: #000000;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0.9;
+    }
 }
