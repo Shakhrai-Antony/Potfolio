@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Potfolio/static/css/main.89536bf9.css",
+    "main.js": "/Potfolio/static/js/main.60b7efba.js",
+    "static/js/787.67603d18.chunk.js": "/Potfolio/static/js/787.67603d18.chunk.js",
+    "static/media/bg.png": "/Potfolio/static/media/bg.6d0d3966db763c3b72b2.png",
+    "static/media/portfolio-img.png": "/Potfolio/static/media/portfolio-img.14903dc87cb2942ca10b.png",
+    "static/media/portfolio-img (3).png": "/Potfolio/static/media/portfolio-img (3).0fb1431b090ade9f7b42.png",
+    "static/media/portfolio-img (2).png": "/Potfolio/static/media/portfolio-img (2).999b9219e8acc297de31.png",
+    "static/media/portfolio-img (4).png": "/Potfolio/static/media/portfolio-img (4).7fb239a131cf8604646f.png",
+    "static/media/portfolio-img (1).png": "/Potfolio/static/media/portfolio-img (1).ffaff2d74faeb4372147.png",
+    "static/media/portfolio-img (5).png": "/Potfolio/static/media/portfolio-img (5).551d9b5c1655de9edffe.png",
+    "static/media/Inter-Regular.ttf": "/Potfolio/static/media/Inter-Regular.2391725004ae05a27e8e.ttf",
+    "static/media/video.jpg": "/Potfolio/static/media/video.94ec4e3bb39ecf1689f2.jpg",
+    "static/media/Merriweather-Regular.ttf": "/Potfolio/static/media/Merriweather-Regular.da67ca8c38ef44c4773d.ttf",
+    "static/media/contacts_img.jpg": "/Potfolio/static/media/contacts_img.bfa84bbef8dbbbe203be.jpg",
+    "index.html": "/Potfolio/index.html",
+    "main.89536bf9.css.map": "/Potfolio/static/css/main.89536bf9.css.map",
+    "main.60b7efba.js.map": "/Potfolio/static/js/main.60b7efba.js.map",
+    "787.67603d18.chunk.js.map": "/Potfolio/static/js/787.67603d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89536bf9.css",
+    "static/js/main.60b7efba.js"
+  ]
+}
